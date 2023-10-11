@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -26,6 +27,7 @@ const{handleAdminLogin} = require("./controllers/admin.js");
 const { restrictToLoginUserOnly } = require("./middleware/user.js");
 //session
 const session = require("express-session");
+const BASE_URL = process.env.DATABASE
 
 
 const corsOptions = {
@@ -40,7 +42,7 @@ server.use(express.json());
 
 //connect with db
 const main = async () => {
-  await mongoose.connect("mongodb+srv://foodease:foodease@cluster0.ykirrhq.mongodb.net/FoodEase");
+  await mongoose.connect(BASE_URL);
   console.log("DB connected!");
 };
 main().catch((err) => {
