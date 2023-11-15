@@ -6,8 +6,7 @@
   "scripts": {
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon app.js",
-    "built":"npm i"
+    "built":"npm install"
   },
   "keywords": [],
   "author": "",
